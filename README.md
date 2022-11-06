@@ -1,1 +1,0 @@
-# montra-take-home
