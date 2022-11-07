@@ -1,6 +1,7 @@
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
 
 import Cart from "./pages/Cart/Cart";
+import Home from "./pages/Home/Home";
 import ProductDetails from "./pages/Products/ProductDetails";
 import Products from "./pages/Products/Products";
 import { Provider as ReduxProvider } from "react-redux";
@@ -14,7 +15,7 @@ const router = createBrowserRouter([
     children: [
       {
         path: "",
-        element: <div>Hello World</div>,
+        element: <Home />,
       },
       {
         path: "products",
