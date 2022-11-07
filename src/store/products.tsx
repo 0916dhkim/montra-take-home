@@ -1,4 +1,4 @@
-import { configureStore, createSlice } from "@reduxjs/toolkit";
+import { createSlice } from "@reduxjs/toolkit";
 
 type Product = {
   id: number;
@@ -57,15 +57,4 @@ const productsSlice = createSlice({
   reducers: {},
 });
 
-const cartSlice = createSlice({
-  name: "cart",
-  initialState: [],
-  reducers: {},
-});
-
-export const store = configureStore({
-  reducer: {
-    products: productsSlice.reducer,
-    cart: cartSlice.reducer,
-  },
-});
+export default productsSlice.reducer;
