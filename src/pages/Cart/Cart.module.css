@@ -12,4 +12,8 @@
   .totalLabel {
     @apply bg-slate-100 p-3 rounded;
   }
+
+  .emptyLabel {
+    @apply text-slate-300 self-center;
+  }
 }

@@ -16,6 +16,9 @@ export default function Cart() {
 
   return (
     <div className={classes.cart}>
+      {cart.length === 0 ? (
+        <span className={classes.emptyLabel}>Cart is empty!</span>
+      ) : null}
       {cart.map((cartItem) => (
         <CartItem key={cartItem.product.id} item={cartItem} />
       ))}
