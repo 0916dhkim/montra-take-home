@@ -3,11 +3,27 @@
 @tailwind utilities;
 
 @layer components {
+  .root {
+    @apply min-h-screen min-w-full flex flex-col items-stretch;
+  }
+
   .nav {
     @apply bg-slate-200 py-4 px-8;
   }
 
   .navGroup {
-    @apply flex flex-row justify-end gap-3;
+    @apply flex flex-row justify-start gap-3;
+  }
+
+  .navLinkBase {
+    @apply text-zinc-900 hover:text-zinc-500;
+  }
+
+  .navLink {
+    @apply navLinkBase;
+  }
+
+  .navLinkActive {
+    @apply navLinkBase text-green-700;
   }
 }

@@ -4,12 +4,33 @@ import classes from "./Root.module.css";
 
 export default function Root() {
   return (
-    <div>
+    <div className={classes.root}>
       <nav className={classes.nav}>
         <ul className={classes.navGroup}>
-          <NavLink to="/">Home</NavLink>
-          <NavLink to="/products">Products</NavLink>
-          <NavLink to="/cart">Cart</NavLink>
+          <NavLink
+            className={({ isActive }) =>
+              isActive ? classes.navLinkActive : classes.navLink
+            }
+            to="/"
+          >
+            Home
+          </NavLink>
+          <NavLink
+            className={({ isActive }) =>
+              isActive ? classes.navLinkActive : classes.navLink
+            }
+            to="/products"
+          >
+            Products
+          </NavLink>
+          <NavLink
+            className={({ isActive }) =>
+              isActive ? classes.navLinkActive : classes.navLink
+            }
+            to="/cart"
+          >
+            Cart
+          </NavLink>
         </ul>
       </nav>
       <Outlet />
