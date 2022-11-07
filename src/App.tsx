@@ -1,5 +1,7 @@
-import { RouterProvider, createBrowserRouter } from "react-router-dom";
+import { Outlet, RouterProvider, createBrowserRouter } from "react-router-dom";
 
+import ProductDetails from "./pages/Products/ProductDetails";
+import Products from "./pages/Products/Products";
 import Root from "./Root";
 
 const router = createBrowserRouter([
@@ -8,12 +10,21 @@ const router = createBrowserRouter([
     element: <Root />,
     children: [
       {
-        path: "/",
+        path: "",
         element: <div>Hello World</div>,
       },
       {
         path: "products",
-        element: <div>Hello products</div>,
+        children: [
+          {
+            path: "",
+            element: <Products />,
+          },
+          {
+            path: ":id",
+            element: <ProductDetails />,
+          },
+        ],
       },
       {
         path: "cart",
