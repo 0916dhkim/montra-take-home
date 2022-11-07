@@ -1,0 +1,13 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  .nav {
+    @apply bg-slate-200 py-4 px-8;
+  }
+
+  .navGroup {
+    @apply flex flex-row justify-end gap-3;
+  }
+}
