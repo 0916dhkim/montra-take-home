@@ -2,15 +2,15 @@
 
 @layer components {
   .cartItem {
-    @apply relative bg-slate-100 rounded flex flex-row p-6 gap-8;
+    @apply relative bg-slate-100 rounded flex flex-row items-center p-6 gap-8;
   }
 
   .thumbnail {
-    @apply w-24 h-24 bg-slate-800 self-center;
+    @apply w-32 bg-slate-800 self-center;
   }
 
   .itemDetails {
-    @apply flex-1 flex flex-col;
+    @apply flex-1 flex flex-col self-stretch;
   }
 
   .title {

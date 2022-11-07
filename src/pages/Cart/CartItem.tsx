@@ -1,21 +1,24 @@
+import { CartItem as CartItemType } from "../../store/cart";
+import { NavLink } from "react-router-dom";
 import classes from "./CartItem.module.css";
 
-export default function CartItem() {
+type CartItemProps = {
+  item: CartItemType;
+};
+
+export default function CartItem({ item }: CartItemProps) {
   return (
     <div className={classes.cartItem}>
-      <div className={classes.thumbnail} />
+      <NavLink to={`/products/${item.product.id}`}>
+        <img className={classes.thumbnail} src={item.product.thumbnail} />
+      </NavLink>
       <div className={classes.itemDetails}>
-        <span className={classes.title}>Book Title</span>
-        <p className={classes.description}>
-          Text text text text Text text text text Text text text text Text text
-          text text Text text text text Text text text text Text text text text
-          Text text text text Text text text text Text text text text Text text
-          text text
-        </p>
+        <span className={classes.title}>{item.product.title}</span>
+        <p className={classes.description}>{item.product.description}</p>
       </div>
       <div className={classes.orderDetails}>
-        <span>Price: $00000</span>
-        <span>Quantity: 1</span>
+        <span>Price: ${item.product.price}</span>
+        <span>Quantity: {item.quantity}</span>
       </div>
       <button className={classes.close}>X</button>
     </div>
