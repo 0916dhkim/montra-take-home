@@ -1,12 +1,16 @@
-import { CartItem as CartItemType } from "../../store/cart";
+import { CartItem as CartItemType, deleteItem } from "../../store/cart";
+
 import { NavLink } from "react-router-dom";
 import classes from "./CartItem.module.css";
+import { useAppDispatch } from "../../store/store";
 
 type CartItemProps = {
   item: CartItemType;
 };
 
 export default function CartItem({ item }: CartItemProps) {
+  const dispatch = useAppDispatch();
+
   return (
     <div className={classes.cartItem}>
       <NavLink to={`/products/${item.product.id}`}>
@@ -20,7 +24,12 @@ export default function CartItem({ item }: CartItemProps) {
         <span>Price: ${item.product.price}</span>
         <span>Quantity: {item.quantity}</span>
       </div>
-      <button className={classes.close}>X</button>
+      <button
+        className={classes.close}
+        onClick={() => dispatch(deleteItem(item.product.id))}
+      >
+        X
+      </button>
     </div>
   );
 }
