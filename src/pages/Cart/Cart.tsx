@@ -7,10 +7,12 @@ export default function Cart() {
   const cart = useAppSelector((state) => state.cart);
   const total = useMemo(
     () =>
-      cart.reduce(
-        (prev, cartItem) => prev + cartItem.product.price * cartItem.quantity,
-        0
-      ),
+      cart
+        .reduce(
+          (prev, cartItem) => prev + cartItem.product.price * cartItem.quantity,
+          0
+        )
+        .toFixed(2),
     [cart]
   );
 
