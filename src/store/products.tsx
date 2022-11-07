@@ -1,6 +1,6 @@
 import { createSlice } from "@reduxjs/toolkit";
 
-type Product = {
+export type Product = {
   id: number;
   title: string;
   author: string;
