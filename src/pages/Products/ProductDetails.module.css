@@ -6,7 +6,7 @@
   }
 
   .detailsLeft {
-    @apply flex-1 rounded bg-slate-100 p-4;
+    @apply flex flex-col flex-1 rounded bg-slate-100 p-4 gap-2;
   }
 
   .detailsRight {
@@ -14,7 +14,7 @@
   }
 
   .productImage {
-    @apply w-32 h-32 bg-slate-800 self-center rounded;
+    @apply w-64 self-center rounded;
   }
 
   .quantityInput {

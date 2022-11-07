@@ -8,7 +8,11 @@ export default function Products() {
   return (
     <div className={classes.thumbnailGrid}>
       {products.map((product) => (
-        <ProductThumbnail key={product.id} src={product.thumbnail} />
+        <ProductThumbnail
+          key={product.id}
+          productId={product.id}
+          src={product.thumbnail}
+        />
       ))}
     </div>
   );
