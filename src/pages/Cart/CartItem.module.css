@@ -1,0 +1,31 @@
+@tailwind components;
+
+@layer components {
+  .cartItem {
+    @apply relative bg-slate-100 rounded flex flex-row p-6 gap-8;
+  }
+
+  .thumbnail {
+    @apply w-24 h-24 bg-slate-800 self-center;
+  }
+
+  .itemDetails {
+    @apply flex-1 flex flex-col;
+  }
+
+  .title {
+    @apply font-bold;
+  }
+
+  .description {
+    @apply bg-slate-200 p-2 rounded flex-1;
+  }
+
+  .orderDetails {
+    @apply flex flex-col justify-center;
+  }
+
+  .close {
+    @apply absolute top-3 right-4 text-red-500 font-bold;
+  }
+}
