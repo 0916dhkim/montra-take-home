@@ -2,10 +2,10 @@
 
 @layer components {
   .thumbnailContainer {
-    @apply flex flex-row justify-center bg-slate-300 rounded;
+    @apply flex flex-row justify-center bg-slate-100 rounded;
   }
 
   .thumbnail {
-    @apply h-64 w-40 bg-slate-800 rounded;
+    height: 30rem;
   }
 }

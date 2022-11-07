@@ -1,12 +1,15 @@
 import ProductThumbnail from "./ProductThumbnail";
 import classes from "./Products.module.css";
+import { useAppSelector } from "../../store/store";
 
 export default function Products() {
+  const products = useAppSelector((state) => state.products);
+
   return (
     <div className={classes.thumbnailGrid}>
-      <ProductThumbnail />
-      <ProductThumbnail />
-      <ProductThumbnail />
+      {products.map((product) => (
+        <ProductThumbnail key={product.id} src={product.thumbnail} />
+      ))}
     </div>
   );
 }
